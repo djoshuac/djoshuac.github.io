@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html>
   <link rel="icon" href="./favicon.png">
+  <script>
+    const $ = (s) => document.querySelector(s)
+    const $$ = (s) => [...document.querySelectorAll(s)]
+  </script>
 </head>
 <body>
+  <!-- Projects -->
+  <div class="project-card">
+    <h2>Geometric Art</h1>
+    <span>
+      <a href="https://djoshuac.github.io/geometric-art/">App</a>
+      |
+      <a href="https://github.com/djoshuac/geometric-art/">Repo</a>
+    </span>
+    <p>
+      Create desktop backgrounds, favicons, profile pictures, etc, using this simple web app. This project
+      turns algorithms into art.
+    </p>
+    <div style="display: flex">
+      <div style="flex-direction: row;">
+        <img src="./images/wave.jpg" alt="The Great Wave off Kanagawa" height="200" />
+        <img src="./images/plus.png" alt="plus" height="200px"/>
+        <img src="./images/lloyds.png" alt="LLoyds Method" height="200px"/>
+        <img src="./images/equal.png" alt="equals" height="200px"/>
+        <img src="./images/geometric-art.png" alt="Geometric Art" height="200px"/>
+      </div>
+    </div>
+
+    <h3>Some features</h3>
+    <ul>
+      <li>Sample "distinct colors" from an image using <a href="https://en.wikipedia.org/wiki/K-means_clustering">K-Means Clustring</a></li>
+      <li>Fit tiling to screen dimensions using <a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">Euclid's Algorith</a></li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="project-card">
+    <h2>Prime Number ASCII Art</h2>
+    <span>
+      <a href="https://github.com/djoshuac/geometric-art/">Repo</a>
+    </span>
+
+    <p>
+      In 2020, I stumbled accross a <a href="https://archive.bridgesmathart.org/2016/bridges2016-359.pdf">nifty technique</a> for computing
+      prime numbers that look like images.
+    </p>
+    <p>
+      Here's a broad overview of the techqnique:
+    </p>
+    <ol>
+      <li>Convert an image into a grid of 10 colors, where each color maps to a digit [0-9]</li>
+      <li>Subtly modify this grid of numbers</li>
+      <li>Repeat step 2 until the resulting grid of numbers passes enough tests to be considered prime (note: the rows in the grid are concatenated to a single number for this check)</li>
+    </ol>
+
+    <div style="display: flex">
+      <div style="flex-direction: column;">
+        <button id="reset-big-prime-number">Reset</button> | <span>Prime according to <a href="https://docs.sympy.org/latest/modules/ntheory.html#sympy.ntheory.primetest.isprime">sympy.isprime.</a></span>
+        <br>
+        <textarea id="big-prime-number" rows="25" cols="46" style="font-family: monospace; word-wrap: break-word">7777777777777777777777777777777777777777777777777777777777777777000000000007777777777777777777777777777777770007777777770007777777777777777777777777777700077700000007770077777777777777777777777777770077000777770007700777777777777777777777777770077000770007700077007777777777777777777777777007700770070077007700777777777777777777777777700777007777007700770077777777777777777777777777007770000007700077007777777777777777777777777770007777777700077007777777777777777777777777777770000000000777007777777777777777777777777707777777700077770007777777777777777777770000000000000777777000077777777777777777777700007777777777000000000777000000000007777777700777000000000777007700770007777777700077777700770000777770000770000770007700000007700077700770007770000770007700077007700777700077007770077007700272007700770007700770070077700770077007700770000770077007700770077002700770077007700774007777770077700770077000777000770057500777007770007500007700777700770000777770007700777770067770000977700777777007777000000077700777777700007777770000777777770000777777777000777777777770000000077777777777770000000000007777777777777777777777777777777777777777777777777777</textarea>
+        <script>
+          window.addEventListener('load', () => {
+            $('#reset-big-prime-number').addEventListener('click', () => {
+              // resetting the style triggers a resize back to the default
+              $('#big-prime-number').style = "font-family: monospace; word-wrap: break-word"
+            })
+          })
+        </script>
+      </div>
+    </div>
+
+  </div>
+  <hr>
+
+  <h2>Other projects</h2>
   <ul>
-    <li><a href="https://djoshuac.github.io/geometric-art/">Geometric Art</a></li>
-    <li><a href="https://github.com/djoshuac/prime-ascii">Prime Number ASCII Art Generator</a></li>
     <li><a href="https://github.com/djoshuac/ulam-braille">Detecting Braille in the Ulam Spiral</a></li>
     <li><a href="https://github.com/djoshuac/project_euler">Project Euler Solutions</a></li>
     <li><a href="https://djoshuac.github.io/game-of-life/">Game of Life</a></li>
